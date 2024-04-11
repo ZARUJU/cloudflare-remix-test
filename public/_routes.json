@@ -1,0 +1,6 @@
+{
+    "routes": {
+        "/": "index",
+        "/hello/:id": "hello.$id"
+    }
+}
