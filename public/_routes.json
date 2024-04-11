@@ -1,5 +1,0 @@
-{
-    "routes": {
-        "/hello/:id": "hello.$id"
-    }
-}
