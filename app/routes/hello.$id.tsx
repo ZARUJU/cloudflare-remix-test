@@ -1,16 +1,23 @@
-import { useParams } from "@remix-run/react"
+import { json, LoaderFunction } from "@remix-run/cloudflare";
+import { useLoaderData } from "@remix-run/react";
 
+
+export const loader: LoaderFunction = async ({ params }) => {
+    const id = params.id as string
+
+    return json({ id: id });
+};
 
 
 export default function Index() {
 
-    const params = useParams()
-    console.log(params)
+    const data = useLoaderData<typeof loader>()
+    console.log(data)
 
     return <>
         <h1>ハローワールド</h1>
         <p>I love Cloudflare</p>
-        <p>{params.id}</p>
+        <p>{data as string}</p>
     </>
 
 }
