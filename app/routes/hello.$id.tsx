@@ -8,12 +8,12 @@ import { useParams } from "@remix-run/react";
 // };
 
 export default function Index() {
-    const params = useParams()
+    const { id } = useParams()
 
     return <>
         <h1>ハローワールド</h1>
         <p>I love Cloudflare</p>
-        <p>{params.id}</p>
+        <p>{id}</p>
         <p>これでうまくいくはず</p>
     </>
 
